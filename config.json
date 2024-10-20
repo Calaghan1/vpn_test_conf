@@ -1,0 +1,60 @@
+{
+  "log": {
+    "level": "debug"
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "interface_name": "tun0",
+      "domain_strategy": "ipv4_only",
+      "inet4_address": "172.16.250.1/30",
+      "auto_route": true,
+      "strict_route": false,
+      "sniff": true
+   }
+  ],
+  "outbounds": [
+    {
+      "domain_strategy": "",
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "",
+      "server": "ggg.russfree.ru",
+      "server_port": 48038,
+      "tag": "proxy",
+      "tls": {
+        "enabled": true,
+        "reality": {
+          "enabled": true,
+          "public_key": "Zqf5lsHOgT0rk5c0vm6t2Z7Qf4jT0tEwBEo7fi3_FVg",
+          "short_id": "2bf1226e"
+        },
+        "server_name": "babyliss-pro.net",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "type": "vless",
+      "uuid": "0480f943-76ab-4db1-899d-9d923876e1f7"
+    },
+    {
+      "tag": "direct",
+      "type": "direct"
+    },
+    {
+      "tag": "bypass",
+      "type": "direct"
+    },
+    {
+      "tag": "block",
+      "type": "block"
+    },
+    {
+      "tag": "dns-out",
+      "type": "dns"
+    }
+  ],
+  "route": {
+    "auto_detect_interface": true
+  }
+}
